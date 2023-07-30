@@ -1,0 +1,23 @@
+(function() {
+    
+    //First it prints 1
+    console.log(1); 
+    
+  //added to the event queue with 2 print and 1000 ms (Fourth, it prints 2 after 0ms delay)
+    setTimeout(function(){console.log(2)}, 1000); 
+
+  //added to the event queue with 3 print and 0 ms (Thirdly, it prints 3 after 0ms delay)
+    setTimeout(function(){console.log(3)}, 0); 
+    
+    //Second, it prints 4 as the call stack need to be empty
+    console.log(4);
+
+})();
+
+/*
+Output:
+1
+4
+3
+2
+*/

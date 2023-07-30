@@ -1,0 +1,21 @@
+var arr1 = "john".split('');
+//split is a method of String. Applying split() on a string we get: ['j','o','h','n']
+
+var arr2 = arr1.reverse();
+//arr2 is also pointing to arr1 here arr1 changes to when reversing: ['n','h','o','j']
+
+var arr3 = "jones".split('');
+//In arr3, applying split we get: ['j','o','n','e','s']
+
+arr2.push(arr3);
+//Now we use push() of Array which add element at the end of array like:
+//arr1 changes to aaded an array at last ['n','h','o','j',['j','o','n','e','s']]
+
+/*Here, then we are using string method slice() which accepts start and end index.
+/But here -1 refer to start from last index and fetch only that and return the array
+without disturbing the original array*/
+console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+
+//So, arr1 and arr2 pointing to same location that's why length = 5 and after slicing 
+//the end part we get ['j','o','n','e','s']

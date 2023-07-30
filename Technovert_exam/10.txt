@@ -1,0 +1,28 @@
+function printNumber(num) {
+
+  console.log(num);
+
+}
+
+//First the output will be 1 in console starting from here
+console.log(1);
+
+/*Here, printNumber() will be called and 0ms is the delay part and the argument 2 is passed to the function. Now, the function will be placed in event queue so that as the 
+stack is empty it will return back to execute the event queue function
+*/
+//delay: 0 ms
+setTimeout(printNumber, 0, 2);
+
+//delay: 100 ms (executed after delay 0 ms delay)
+setTimeout(printNumber, 100, 3);
+
+//call stack part after which the queue of 0ms delay will get executed then 
+console.log(4);
+
+/*
+Output will be:
+1
+4
+2
+3
+*/
